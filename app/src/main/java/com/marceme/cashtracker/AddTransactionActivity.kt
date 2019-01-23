@@ -8,9 +8,9 @@ import android.view.Menu
 import android.view.MenuItem
 
 import kotlinx.android.synthetic.main.activity_add_transaction.*
-import kotlinx.android.synthetic.main.content_add_transaction.*
+import kotlinx.android.synthetic.main.add_income_layout.*
 
-class AddTransactionActivity : AppCompatActivity(), AddExpenseCallback {
+class AddTransactionActivity : AppCompatActivity(){
 
     private lateinit var expenseAdapter: ExpenseAdapter
 
@@ -24,13 +24,13 @@ class AddTransactionActivity : AppCompatActivity(), AddExpenseCallback {
         expenseAdapter = ExpenseAdapter()
         val viewManager = LinearLayoutManager(this)
 
-        expense_recyclerview.apply {
-            adapter = expenseAdapter
-            layoutManager = viewManager
-        }
-        add_expense_container.setOnClickListener {
-            showAddExpenseDialog()
-        }
+//        expense_recyclerview.apply {
+//            adapter = expenseAdapter
+//            layoutManager = viewManager
+//        }
+//        add_expense_container.setOnClickListener {
+//            showAddExpenseDialog()
+//        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -41,16 +41,5 @@ class AddTransactionActivity : AppCompatActivity(), AddExpenseCallback {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return super.onOptionsItemSelected(item)
     }
-
-    private fun showAddExpenseDialog() {
-        val addExpenseDialog = AddExpenseDialog()
-        addExpenseDialog.show(supportFragmentManager,"add_expense_dialog")
-
-    }
-
-    override fun addExpense(expense: Expense) {
-        expenseAdapter.addExpense(expense)
-    }
-
 
 }
