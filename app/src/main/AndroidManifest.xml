@@ -16,6 +16,15 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity
+                android:name=".AddTransactionActivity"
+                android:label="@string/title_activity_add_transaction"
+                android:parentActivityName=".MainActivity"
+                android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="com.marceme.cashtracker.MainActivity"/>
+        </activity>
     </application>
 
 </manifest>
