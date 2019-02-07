@@ -51,7 +51,7 @@ class AddExpenseDialog : DialogFragment() {
                     description = expenseName,
                     date = getDate(),
                     spent = expenseTotalEditText.rawValue,
-                    transactionId = 123
+                    budgetId = 123
                 )
             )
         }

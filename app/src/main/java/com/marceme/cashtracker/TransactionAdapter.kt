@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.marceme.cashtracker.model.Budget
-import kotlinx.android.synthetic.main.activity_transaction_statement.view.*
+import kotlinx.android.synthetic.main.balance_layout.view.*
 import kotlinx.android.synthetic.main.transaction_layout.view.*
 
 class TransactionAdapter(val transactionCallback: TransactionCallback) : RecyclerView.Adapter<TransactionAdapter.TransactionViewHolder>() {
@@ -38,9 +38,12 @@ class TransactionAdapter(val transactionCallback: TransactionCallback) : Recycle
         fun bind(budget: Budget) {
             item.budget_description_text.text = budget.description
             item.budget_date_text.text = budget.date
+            item.text_balance.textAsUSCurrency(budget.balance())
+            item.text_total_budget.textAsUSCurrency(budget.amount)
+            item.text_total_expense.textAsUSCurrency(budget.totalSpent)
 
             item.text_add_expense.setOnClickListener {
-                transactionCallback.ShowAddExpense()
+                transactionCallback.ShowAddExpense(budget)
             }
 
             item.setOnLongClickListener{

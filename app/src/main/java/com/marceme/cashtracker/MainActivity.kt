@@ -48,8 +48,9 @@ class MainActivity : AppCompatActivity(), TransactionCallback {
     }
 
 
-    override fun ShowAddExpense() {
+    override fun ShowAddExpense(budget: Budget) {
         val intent = Intent(this, AddExpenseActivity::class.java)
+        intent.putExtra(BUDGET_FOR_EXPENSE_KEY, budget)
         startActivity(intent)
     }
 

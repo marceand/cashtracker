@@ -8,7 +8,7 @@ import android.arch.persistence.room.PrimaryKey
 @Entity(tableName = "expense_table",
         foreignKeys = [ForeignKey(entity = Budget::class,
         parentColumns = arrayOf("id"),
-        childColumns = arrayOf("transactionId"),
+        childColumns = arrayOf("budgetId"),
         onDelete = CASCADE)]
 )
 data class Expense(@PrimaryKey(autoGenerate = true)
@@ -16,4 +16,4 @@ data class Expense(@PrimaryKey(autoGenerate = true)
                    val description: String,
                    val date: String,
                    val spent: Long,
-                   val transactionId:Int)
+                   val budgetId:Int)

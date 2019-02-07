@@ -12,4 +12,6 @@ data class Budget(@PrimaryKey(autoGenerate = true)
                               val description: String,
                               val amount: Long = 0,
                               val date: String,
-                              val expense: Long = 0): Parcelable
+                              val totalSpent: Long = 0): Parcelable{
+    fun balance(): Long = amount - totalSpent
+}

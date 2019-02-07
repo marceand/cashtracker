@@ -22,6 +22,6 @@ interface ExpenseDao {
     @Query("DELETE FROM expense_table")
     fun deleteAll()
 
-    @Query("SELECT * FROM expense_table WHERE transactionId=:transactionId")
-    fun findExpenseForIncome(transactionId: Int): LiveData<List<Expense>>
+    @Query("SELECT * FROM expense_table WHERE budgetId=:budgetId")
+    fun findExpenseForIncome(budgetId: Int): LiveData<List<Expense>>
 }

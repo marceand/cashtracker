@@ -26,12 +26,12 @@ class AddBudgetActivity : AppCompatActivity(){
     }
 
     private fun saveBudget() {
-        val budgetDescription = edit_income_description.text.toString()
+        val description = edit_budget_description.text.toString()
         val amount = edit_budget_amount.rawValue
 
 
-        if(budgetDescription.isEmpty()){
-            edit_income_description.error = getString(R.string.error_empty_income_description)
+        if(description.isEmpty()){
+            edit_budget_description.error = getString(R.string.error_empty_income_description)
             return
         }
 
@@ -40,7 +40,7 @@ class AddBudgetActivity : AppCompatActivity(){
             return
         }
 
-        val budget = Budget(description = budgetDescription, amount = amount, date = Date().dateAsString())
+        val budget = Budget(description = description, amount = amount, date = Date().dateAsString())
 
         val intent = Intent()
         intent.putExtra(BUDGET_KEY, budget)
