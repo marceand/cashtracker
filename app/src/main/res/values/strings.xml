@@ -3,4 +3,7 @@
     <string name="title_activity_add_transaction">AddTransactionActivity</string>
     <string name="expense_name_error">A name is required.</string>
     <string name="expense_total_error">Total expense is required.</string>
+    <string name="transaction_statement_activity">Statement</string>
+    <string name="error_empty_income_description">Budget description is required.</string>
+    <string name="error_empty_total_income">Budget is required.</string>
 </resources>

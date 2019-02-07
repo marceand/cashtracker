@@ -5,7 +5,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".AddBudgetActivity">
+        tools:context=".AddExpenseActivity">
 
     <android.support.design.widget.AppBarLayout
             android:layout_height="wrap_content"
@@ -13,18 +13,19 @@
             android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
-                android:id="@+id/add_income_toolbar"
+                android:id="@+id/toolbar_add_expense"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"
-                app:title="Add Budget"
+                app:title="Add Expense"
                 app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/add_budget_content"
+    <include layout="@layout/add_expense_content"
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
 </android.support.design.widget.CoordinatorLayout>
+

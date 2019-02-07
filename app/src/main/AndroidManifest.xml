@@ -17,10 +17,27 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".AddTransactionActivity"
-                android:label="@string/title_activity_add_transaction"
+                android:name=".AddBudgetActivity"
                 android:parentActivityName=".MainActivity"
                 android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="com.marceme.cashtracker.MainActivity"/>
+        </activity>
+
+        <activity
+                android:name=".AddExpenseActivity"
+                android:parentActivityName=".MainActivity"
+                android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value="com.marceme.cashtracker.MainActivity"/>
+        </activity>
+
+        <activity
+                android:name=".TransactionStatementActivity"
+                android:parentActivityName=".MainActivity"
+                android:label="@string/transaction_statement_activity">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
                     android:value="com.marceme.cashtracker.MainActivity"/>

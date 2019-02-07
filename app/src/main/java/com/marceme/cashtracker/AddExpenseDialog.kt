@@ -7,9 +7,10 @@ import android.support.v4.app.DialogFragment
 import android.support.v7.app.AlertDialog
 import android.widget.EditText
 import com.blackcat.currencyedittext.CurrencyEditText
+import com.marceme.cashtracker.model.Expense
 import kotlinx.android.synthetic.main.fragment_add_expense.view.*
-import com.marceme.cashtracker.R.id.editText
-
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class AddExpenseDialog : DialogFragment() {
@@ -45,8 +46,21 @@ class AddExpenseDialog : DialogFragment() {
         val expenseTotal = expenseTotalEditText.text.toString()
 
         if(expenseName.isNotEmpty() && expenseTotal.isNotEmpty()){
-            addExpenseCallback?.addExpense(Expense(expenseName, expenseTotalEditText.rawValue))
+            addExpenseCallback?.addExpense(
+                Expense(
+                    description = expenseName,
+                    date = getDate(),
+                    spent = expenseTotalEditText.rawValue,
+                    transactionId = 123
+                )
+            )
         }
     }
+
+    private fun getDate(): String{
+        val dateFormat = SimpleDateFormat("dd/MM/yy")
+        return dateFormat.format(Date().time)
+    }
+
 
 }

@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.marceme.cashtracker.model.Expense
 import kotlinx.android.synthetic.main.expense_layout.view.*
 
 class ExpenseAdapter : RecyclerView.Adapter<ExpenseAdapter.ExpenseViewHolder>() {
@@ -25,16 +26,16 @@ class ExpenseAdapter : RecyclerView.Adapter<ExpenseAdapter.ExpenseViewHolder>() 
         viewHolder.bind(expenses[position])
     }
 
-    fun addExpense(expense: Expense) {
-        expenses.add(expense)
+    fun addExpenses(expenses: List<Expense>) {
+        this.expenses.addAll(expenses)
         notifyDataSetChanged()
     }
 
     inner class ExpenseViewHolder(val item: View) : RecyclerView.ViewHolder(item){
 
         fun bind(expense: Expense) {
-            item.expense_name.text = expense.name
-            item.expense_total.text = expense.total.toString()
+            item.expense_name.text = expense.description
+            item.expense_total.text = expense.spent.toString()
         }
 
     }
