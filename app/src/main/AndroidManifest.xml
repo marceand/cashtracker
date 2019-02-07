@@ -9,7 +9,7 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".BudgetActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -18,29 +18,29 @@
         </activity>
         <activity
                 android:name=".AddBudgetActivity"
-                android:parentActivityName=".MainActivity"
+                android:parentActivityName=".BudgetActivity"
                 android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value="com.marceme.cashtracker.MainActivity"/>
+                    android:value="com.marceme.cashtracker.BudgetActivity"/>
         </activity>
 
         <activity
                 android:name=".AddExpenseActivity"
-                android:parentActivityName=".MainActivity"
+                android:parentActivityName=".BudgetActivity"
                 android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value="com.marceme.cashtracker.MainActivity"/>
+                    android:value="com.marceme.cashtracker.BudgetActivity"/>
         </activity>
 
         <activity
                 android:name=".TransactionStatementActivity"
-                android:parentActivityName=".MainActivity"
+                android:parentActivityName=".BudgetActivity"
                 android:label="@string/transaction_statement_activity">
             <meta-data
                     android:name="android.support.PARENT_ACTIVITY"
-                    android:value="com.marceme.cashtracker.MainActivity"/>
+                    android:value="com.marceme.cashtracker.BudgetActivity"/>
         </activity>
     </application>
 

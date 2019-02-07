@@ -8,22 +8,22 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import com.marceme.cashtracker.model.Budget
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_budget.*
 
-class MainActivity : AppCompatActivity(), TransactionCallback {
+class BudgetActivity : AppCompatActivity(), TransactionCallback {
 
-    private lateinit var transactionAdapter: TransactionAdapter
+    private lateinit var budgetAdapter: BudgetAdapter
     private lateinit var budgetViewModel: BudgetViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_budget)
 
-        transactionAdapter = TransactionAdapter(this)
+        budgetAdapter = BudgetAdapter(this)
         val viewManager = LinearLayoutManager(this)
 
         recyclerview_transaction.apply {
-            adapter = transactionAdapter
+            adapter = budgetAdapter
             layoutManager = viewManager
         }
 
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity(), TransactionCallback {
 
         budgetViewModel = ViewModelProviders.of(this).get(BudgetViewModel::class.java)
         budgetViewModel.allBudgets.observe(this, Observer { budgets ->
-            budgets?.let {transactionAdapter.addTransactions(it)}})
+            budgets?.let {budgetAdapter.addBudgets(it)}})
 
     }
 
