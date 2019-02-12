@@ -10,4 +10,6 @@
     <string name="cancel">Cancel</string>
     <string name="delete_budget_title">Delete budget</string>
     <string name="delete_budget_message">Are you sure you want to delete this budget?</string>
+    <string name="delete_expense_title">Delete expense</string>
+    <string name="delete_expense_message">Are you sure you want to delete expense?</string>
 </resources>

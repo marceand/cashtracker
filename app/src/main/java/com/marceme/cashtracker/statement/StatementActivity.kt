@@ -59,6 +59,8 @@ class StatementActivity : AppCompatActivity(), StatementCallback{
     override fun delete(expense: Expense) {
         val builder = AlertDialog.Builder(this)
         builder.apply {
+            setTitle(R.string.delete_expense_title)
+            setMessage(R.string.delete_expense_message)
             setPositiveButton(R.string.ok
             ) { dialog, id ->
                 statementViewModel.deleteExpense(expense)
