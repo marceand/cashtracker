@@ -52,10 +52,10 @@ class StatementActivity : AppCompatActivity(), StatementCallback{
     private fun showExpenses(expenses: List<Expense>) {
         if(expenses.isNotEmpty()) {
             empty_expenses.visibility = View.GONE
-            expenseAdapter.addExpenses(expenses)
         }else{
             empty_expenses.visibility = View.VISIBLE
         }
+        expenseAdapter.addExpenses(expenses)
     }
 
     private fun showBudget(budget: Budget) {
