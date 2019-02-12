@@ -12,4 +12,6 @@
     <string name="delete_budget_message">Are you sure you want to delete this budget?</string>
     <string name="delete_expense_title">Delete expense</string>
     <string name="delete_expense_message">Are you sure you want to delete expense?</string>
+    <string name="add_a_budget">Add a budget</string>
+    <string name="empty_expenses">Please, add expense</string>
 </resources>

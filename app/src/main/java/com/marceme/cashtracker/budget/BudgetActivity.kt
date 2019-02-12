@@ -8,11 +8,13 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.widget.LinearLayoutManager
+import android.view.View
 import com.marceme.cashtracker.*
 import com.marceme.cashtracker.model.Budget
 import com.marceme.cashtracker.statement.BUDGET_ID_KEY
 import com.marceme.cashtracker.statement.StatementActivity
 import kotlinx.android.synthetic.main.activity_budget.*
+import kotlinx.android.synthetic.main.budget_content.*
 
 class BudgetActivity : AppCompatActivity(), BudgetCallback {
 
@@ -37,8 +39,17 @@ class BudgetActivity : AppCompatActivity(), BudgetCallback {
 
         budgetViewModel = ViewModelProviders.of(this).get(BudgetViewModel::class.java)
         budgetViewModel.allBudgets.observe(this, Observer { budgets ->
-            budgets?.let {budgetAdapter.addBudgets(it)}})
+            budgets?.let {showBudgets(it)}})
 
+    }
+
+    private fun showBudgets(it: List<Budget>) {
+        if(it.isEmpty()) {
+            empty_budget_message.visibility = View.VISIBLE
+        }else{
+            empty_budget_message.visibility = View.GONE
+            budgetAdapter.addBudgets(it)
+        }
     }
 
     private fun addBudget() {
