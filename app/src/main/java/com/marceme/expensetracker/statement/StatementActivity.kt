@@ -15,7 +15,7 @@ import com.marceme.expensetracker.textAsUSCurrency
 import kotlinx.android.synthetic.main.activity_statement.*
 import kotlinx.android.synthetic.main.balance_layout.*
 
-const val BUDGET_ID_KEY = "com.marceme.expensetracker.budget_id"
+const val BUDGET_ID_KEY = "com.marceme.expensetracker.intent_budget_id"
 class StatementActivity : AppCompatActivity(), StatementCallback{
 
     private lateinit var statementViewModel: StatementViewModel

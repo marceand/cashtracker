@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.add_budget_content.*
 import java.util.*
 
 const val ADD_BUDGET_CODE = 111
-const val BUDGET_KEY = "com.marceme.expensetracker.budgetLiveData"
+const val BUDGET_KEY = "com.marceme.expensetracker.intent_budget_key"
 class AddBudgetActivity : AppCompatActivity(){
 
 

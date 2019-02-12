@@ -10,7 +10,7 @@ import com.marceme.expensetracker.model.Budget
 import kotlinx.android.synthetic.main.activity_add_expense.*
 import kotlinx.android.synthetic.main.add_expense_content.*
 
-const val BUDGET_FOR_EXPENSE_KEY = "com.marceme.expensetracker.budget_for_expense"
+const val BUDGET_FOR_EXPENSE_KEY = "com.marceme.expensetracker.intent_budget_for_expense"
 class AddExpenseActivity : AppCompatActivity(){
 
     private lateinit var expenseViewModel: ExpenseViewModel
