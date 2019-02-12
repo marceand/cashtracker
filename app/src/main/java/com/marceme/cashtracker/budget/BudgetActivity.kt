@@ -6,6 +6,7 @@ import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.support.v7.widget.LinearLayoutManager
 import com.marceme.cashtracker.*
 import com.marceme.cashtracker.model.Budget
@@ -58,7 +59,17 @@ class BudgetActivity : AppCompatActivity(), BudgetCallback {
     }
 
     override fun deleteBudget(budget: Budget) {
-        budgetViewModel.deleteBudget(budget)
+        val builder = AlertDialog.Builder(this)
+        builder.apply {
+            setTitle(getString(R.string.delete_budget_title))
+            setMessage(getString(R.string.delete_budget_message))
+            setPositiveButton(R.string.ok
+            ) { dialog, id ->
+                budgetViewModel.deleteBudget(budget)
+            }
+            setNegativeButton(R.string.cancel, null)
+        }
+        builder.create().show()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

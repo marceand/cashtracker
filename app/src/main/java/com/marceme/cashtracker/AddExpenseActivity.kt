@@ -26,7 +26,7 @@ class AddExpenseActivity : AppCompatActivity(){
             saveExpensive()
         }
 
-        expenseViewModel.isSavedState.observe(this, Observer {
+        expenseViewModel.isSaveState.observe(this, Observer {
             if(it == true){
                 finish()
             }

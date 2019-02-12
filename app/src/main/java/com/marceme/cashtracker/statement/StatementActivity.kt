@@ -2,7 +2,9 @@ package com.marceme.cashtracker.statement
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.content.DialogInterface
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager
 import com.marceme.cashtracker.R
@@ -55,6 +57,14 @@ class StatementActivity : AppCompatActivity(), StatementCallback{
     }
 
     override fun delete(expense: Expense) {
-       statementViewModel.deleteExpense(expense)
+        val builder = AlertDialog.Builder(this)
+        builder.apply {
+            setPositiveButton(R.string.ok
+            ) { dialog, id ->
+                statementViewModel.deleteExpense(expense)
+            }
+            setNegativeButton(R.string.cancel, null)
+        }
+        builder.create().show()
     }
 }

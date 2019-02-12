@@ -24,7 +24,7 @@ class ExpenseViewModel (application: Application) : AndroidViewModel(application
     private val expenseRepository: ExpenseRepository
     private val budgetRepository: BudgetRepository
 
-    val isSavedState = MutableLiveData<Boolean>()
+    val isSaveState = MutableLiveData<Boolean>()
 
 
     init {
@@ -54,7 +54,7 @@ class ExpenseViewModel (application: Application) : AndroidViewModel(application
                 val newBudget = budget.run { copy(totalSpent = totalSpent + spent) }
                 withContext(Dispatchers.IO) { budgetRepository.update(newBudget) }
 
-                isSavedState.value = true
+                isSaveState.value = true
             } catch (e: Exception) {
                 e.printStackTrace()
             }
