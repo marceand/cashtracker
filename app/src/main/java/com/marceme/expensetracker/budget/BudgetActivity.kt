@@ -53,8 +53,9 @@ class BudgetActivity : AppCompatActivity(), BudgetCallback {
             empty_budget_message.visibility = View.VISIBLE
         }else{
             empty_budget_message.visibility = View.GONE
-            budgetAdapter.addBudgets(it)
         }
+
+        budgetAdapter.addBudgets(it)
     }
 
     private fun addBudget() {
