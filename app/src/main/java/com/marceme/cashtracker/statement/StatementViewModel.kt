@@ -9,7 +9,6 @@ import com.marceme.cashtracker.database.ExpenseRoomDatabase
 import com.marceme.cashtracker.model.Budget
 import com.marceme.cashtracker.model.Expense
 import kotlinx.coroutines.*
-import java.lang.Exception
 import kotlin.coroutines.CoroutineContext
 
 class StatementViewModel (application: Application) : AndroidViewModel(application){

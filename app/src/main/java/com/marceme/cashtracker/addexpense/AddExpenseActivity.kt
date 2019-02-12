@@ -1,9 +1,10 @@
-package com.marceme.cashtracker
+package com.marceme.cashtracker.addexpense
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity;
+import com.marceme.cashtracker.R
 import com.marceme.cashtracker.expense.ExpenseViewModel
 import com.marceme.cashtracker.model.Budget
 import kotlinx.android.synthetic.main.activity_add_expense.*

@@ -10,7 +10,6 @@ import com.marceme.cashtracker.dateAsString
 import com.marceme.cashtracker.model.Budget
 import com.marceme.cashtracker.model.Expense
 import kotlinx.coroutines.*
-import java.lang.Exception
 import java.util.*
 import kotlin.coroutines.CoroutineContext
 

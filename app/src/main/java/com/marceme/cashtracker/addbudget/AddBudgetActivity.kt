@@ -1,11 +1,12 @@
-package com.marceme.cashtracker
+package com.marceme.cashtracker.addbudget
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity
+import com.marceme.cashtracker.R
+import com.marceme.cashtracker.dateAsString
 import com.marceme.cashtracker.model.Budget
-
-import kotlinx.android.synthetic.main.activity_add_transaction.*
+import kotlinx.android.synthetic.main.activity_add_budget.*
 import kotlinx.android.synthetic.main.add_budget_content.*
 import java.util.*
 
@@ -17,7 +18,7 @@ class AddBudgetActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_budget)
-        setSupportActionBar(add_income_toolbar)
+        setSupportActionBar(toolbar_add_budget)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         button_save_budget.setOnClickListener {

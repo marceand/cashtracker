@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".AddBudgetActivity"
+                android:name=".addbudget.AddBudgetActivity"
                 android:parentActivityName=".budget.BudgetActivity"
                 android:theme="@style/AppTheme.NoActionBar">
             <meta-data
@@ -26,7 +26,7 @@
         </activity>
 
         <activity
-                android:name=".AddExpenseActivity"
+                android:name=".addexpense.AddExpenseActivity"
                 android:parentActivityName=".budget.BudgetActivity"
                 android:theme="@style/AppTheme.NoActionBar">
             <meta-data

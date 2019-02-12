@@ -1,15 +1,15 @@
 package com.marceme.cashtracker.budget
 
+import android.support.v7.widget.PopupMenu
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.marceme.cashtracker.R
 import com.marceme.cashtracker.model.Budget
+import com.marceme.cashtracker.textAsUSCurrency
 import kotlinx.android.synthetic.main.balance_layout.view.*
 import kotlinx.android.synthetic.main.budget_row_layout.view.*
-import android.support.v7.widget.PopupMenu
-import com.marceme.cashtracker.R
-import com.marceme.cashtracker.textAsUSCurrency
 
 
 class BudgetAdapter(val budgetCallback: BudgetCallback) : RecyclerView.Adapter<BudgetAdapter.BudgetViewHolder>() {
