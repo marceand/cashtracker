@@ -5,10 +5,10 @@ import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import com.marceme.cashtracker.R
-import com.marceme.cashtracker.expense.ExpenseAdapter
 import com.marceme.cashtracker.model.Budget
 import com.marceme.cashtracker.model.Expense
 import com.marceme.cashtracker.textAsUSCurrency
@@ -32,6 +32,7 @@ class StatementActivity : AppCompatActivity(), StatementCallback{
         recyclerview_expenses.apply {
             adapter = expenseAdapter
             layoutManager = viewManager
+            addItemDecoration(DividerItemDecoration(this@StatementActivity, DividerItemDecoration.VERTICAL))
         }
 
 

@@ -10,7 +10,7 @@ fun Date.dateAsString(): String{
     return dateFormat.format(time)
 }
 
-fun TextView.textAsUSCurrency(amount: Long) {
+fun TextView.textAsUSCurrency(amountInCents: Long) {
     val numberFormat = NumberFormat.getCurrencyInstance(Locale.US)
-    text = numberFormat.format(amount / 100.0);
+    text = numberFormat.format(amountInCents / 100.0);
 }
