@@ -1,11 +1,11 @@
-package com.marceme.cashtracker.database
+package com.marceme.expensetracker.database
 
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
 import android.content.Context
-import com.marceme.cashtracker.model.Budget
-import com.marceme.cashtracker.model.Expense
+import com.marceme.expensetracker.model.Budget
+import com.marceme.expensetracker.model.Expense
 
 @Database(entities = [Budget::class, Expense::class], version = 1)
 public abstract class ExpenseRoomDatabase : RoomDatabase() {

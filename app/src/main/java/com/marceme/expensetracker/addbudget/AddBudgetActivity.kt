@@ -1,17 +1,17 @@
-package com.marceme.cashtracker.addbudget
+package com.marceme.expensetracker.addbudget
 
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.marceme.cashtracker.R
-import com.marceme.cashtracker.dateAsString
-import com.marceme.cashtracker.model.Budget
+import com.marceme.expensetracker.R
+import com.marceme.expensetracker.dateAsString
+import com.marceme.expensetracker.model.Budget
 import kotlinx.android.synthetic.main.activity_add_budget.*
 import kotlinx.android.synthetic.main.add_budget_content.*
 import java.util.*
 
 const val ADD_BUDGET_CODE = 111
-const val BUDGET_KEY = "com.marceme.cashtracker.budgetLiveData"
+const val BUDGET_KEY = "com.marceme.expensetracker.budgetLiveData"
 class AddBudgetActivity : AppCompatActivity(){
 
 

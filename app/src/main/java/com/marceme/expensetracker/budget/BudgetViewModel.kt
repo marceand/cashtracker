@@ -1,11 +1,11 @@
-package com.marceme.cashtracker.budget
+package com.marceme.expensetracker.budget
 
 import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
 import android.arch.lifecycle.LiveData
-import com.marceme.cashtracker.database.BudgetRepository
-import com.marceme.cashtracker.database.ExpenseRoomDatabase
-import com.marceme.cashtracker.model.Budget
+import com.marceme.expensetracker.database.BudgetRepository
+import com.marceme.expensetracker.database.ExpenseRoomDatabase
+import com.marceme.expensetracker.model.Budget
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

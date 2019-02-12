@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CashTracker</string>
+    <string name="app_name">ExpenseTracker</string>
     <string name="title_activity_add_transaction">AddTransactionActivity</string>
     <string name="error_expense_description">A description is required.</string>
     <string name="error_expense_total">Expense is required.</string>

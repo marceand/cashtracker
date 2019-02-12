@@ -1,4 +1,4 @@
-package com.marceme.cashtracker
+package com.marceme.expensetracker
 
 import org.junit.Test
 

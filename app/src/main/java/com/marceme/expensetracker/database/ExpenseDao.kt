@@ -1,8 +1,8 @@
-package com.marceme.cashtracker.database
+package com.marceme.expensetracker.database
 
 import android.arch.lifecycle.LiveData
 import android.arch.persistence.room.*
-import com.marceme.cashtracker.model.Expense
+import com.marceme.expensetracker.model.Expense
 
 @Dao
 interface ExpenseDao {

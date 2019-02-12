@@ -1,8 +1,8 @@
-package com.marceme.cashtracker.database
+package com.marceme.expensetracker.database
 
 import android.arch.lifecycle.LiveData
 import android.support.annotation.WorkerThread
-import com.marceme.cashtracker.model.Budget
+import com.marceme.expensetracker.model.Budget
 
 class BudgetRepository(private val budgetDao: BudgetDao) {
 

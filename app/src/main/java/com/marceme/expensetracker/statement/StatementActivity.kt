@@ -1,4 +1,4 @@
-package com.marceme.cashtracker.statement
+package com.marceme.expensetracker.statement
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
@@ -8,14 +8,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
-import com.marceme.cashtracker.R
-import com.marceme.cashtracker.model.Budget
-import com.marceme.cashtracker.model.Expense
-import com.marceme.cashtracker.textAsUSCurrency
+import com.marceme.expensetracker.R
+import com.marceme.expensetracker.model.Budget
+import com.marceme.expensetracker.model.Expense
+import com.marceme.expensetracker.textAsUSCurrency
 import kotlinx.android.synthetic.main.activity_statement.*
 import kotlinx.android.synthetic.main.balance_layout.*
 
-const val BUDGET_ID_KEY = "com.marceme.cashtracker.budget_id"
+const val BUDGET_ID_KEY = "com.marceme.expensetracker.budget_id"
 class StatementActivity : AppCompatActivity(), StatementCallback{
 
     private lateinit var statementViewModel: StatementViewModel

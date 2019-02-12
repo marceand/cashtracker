@@ -1,4 +1,4 @@
-package com.marceme.cashtracker
+package com.marceme.expensetracker
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

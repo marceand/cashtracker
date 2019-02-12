@@ -1,6 +1,6 @@
-package com.marceme.cashtracker.budget
+package com.marceme.expensetracker.budget
 
-import com.marceme.cashtracker.model.Budget
+import com.marceme.expensetracker.model.Budget
 
 interface BudgetCallback {
     fun showStatement(id: Int)

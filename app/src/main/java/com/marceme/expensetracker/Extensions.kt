@@ -1,4 +1,4 @@
-package com.marceme.cashtracker
+package com.marceme.expensetracker
 
 import android.widget.TextView
 import java.text.NumberFormat

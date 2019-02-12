@@ -1,12 +1,12 @@
-package com.marceme.cashtracker.statement
+package com.marceme.expensetracker.statement
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.marceme.cashtracker.R
-import com.marceme.cashtracker.model.Expense
-import com.marceme.cashtracker.textAsUSCurrency
+import com.marceme.expensetracker.R
+import com.marceme.expensetracker.model.Expense
+import com.marceme.expensetracker.textAsUSCurrency
 import kotlinx.android.synthetic.main.expense_layout.view.*
 
 class ExpenseAdapter(val statementCallback: StatementCallback) : RecyclerView.Adapter<ExpenseAdapter.ExpenseViewHolder>() {

@@ -1,4 +1,4 @@
-package com.marceme.cashtracker.budget
+package com.marceme.expensetracker.budget
 
 import android.app.Activity
 import android.arch.lifecycle.Observer
@@ -9,15 +9,15 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
-import com.marceme.cashtracker.R
-import com.marceme.cashtracker.addbudget.ADD_BUDGET_CODE
-import com.marceme.cashtracker.addbudget.AddBudgetActivity
-import com.marceme.cashtracker.addbudget.BUDGET_KEY
-import com.marceme.cashtracker.addexpense.AddExpenseActivity
-import com.marceme.cashtracker.addexpense.BUDGET_FOR_EXPENSE_KEY
-import com.marceme.cashtracker.model.Budget
-import com.marceme.cashtracker.statement.BUDGET_ID_KEY
-import com.marceme.cashtracker.statement.StatementActivity
+import com.marceme.expensetracker.R
+import com.marceme.expensetracker.addbudget.ADD_BUDGET_CODE
+import com.marceme.expensetracker.addbudget.AddBudgetActivity
+import com.marceme.expensetracker.addbudget.BUDGET_KEY
+import com.marceme.expensetracker.addexpense.AddExpenseActivity
+import com.marceme.expensetracker.addexpense.BUDGET_FOR_EXPENSE_KEY
+import com.marceme.expensetracker.model.Budget
+import com.marceme.expensetracker.statement.BUDGET_ID_KEY
+import com.marceme.expensetracker.statement.StatementActivity
 import kotlinx.android.synthetic.main.activity_budget.*
 import kotlinx.android.synthetic.main.budget_content.*
 

@@ -1,4 +1,4 @@
-package com.marceme.cashtracker.model
+package com.marceme.expensetracker.model
 
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.ForeignKey

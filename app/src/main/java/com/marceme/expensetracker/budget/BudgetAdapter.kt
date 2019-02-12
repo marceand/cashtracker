@@ -1,13 +1,13 @@
-package com.marceme.cashtracker.budget
+package com.marceme.expensetracker.budget
 
 import android.support.v7.widget.PopupMenu
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.marceme.cashtracker.R
-import com.marceme.cashtracker.model.Budget
-import com.marceme.cashtracker.textAsUSCurrency
+import com.marceme.expensetracker.R
+import com.marceme.expensetracker.model.Budget
+import com.marceme.expensetracker.textAsUSCurrency
 import kotlinx.android.synthetic.main.balance_layout.view.*
 import kotlinx.android.synthetic.main.budget_row_layout.view.*
 
