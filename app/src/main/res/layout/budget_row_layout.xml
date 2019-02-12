@@ -32,9 +32,9 @@ android:layout_marginBottom="8dp">
                 />
 
         <ImageView
+                android:id="@+id/image_more_option"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView9"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="8dp"

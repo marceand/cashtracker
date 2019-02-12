@@ -1,4 +1,4 @@
-package com.marceme.cashtracker
+package com.marceme.cashtracker.budget
 
 import android.app.Activity
 import android.arch.lifecycle.Observer
@@ -7,10 +7,13 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import com.marceme.cashtracker.*
 import com.marceme.cashtracker.model.Budget
+import com.marceme.cashtracker.statement.BUDGET_ID_KEY
+import com.marceme.cashtracker.statement.StatementActivity
 import kotlinx.android.synthetic.main.activity_budget.*
 
-class BudgetActivity : AppCompatActivity(), TransactionCallback {
+class BudgetActivity : AppCompatActivity(), BudgetCallback {
 
     private lateinit var budgetAdapter: BudgetAdapter
     private lateinit var budgetViewModel: BudgetViewModel
@@ -28,7 +31,7 @@ class BudgetActivity : AppCompatActivity(), TransactionCallback {
         }
 
         favAddIncome.setOnClickListener {
-            showAddBudget()
+            addBudget()
         }
 
         budgetViewModel = ViewModelProviders.of(this).get(BudgetViewModel::class.java)
@@ -37,21 +40,25 @@ class BudgetActivity : AppCompatActivity(), TransactionCallback {
 
     }
 
-    private fun showAddBudget() {
+    private fun addBudget() {
         val intent = Intent(this, AddBudgetActivity::class.java)
         startActivityForResult(intent, ADD_BUDGET_CODE)
     }
 
-    override fun showTransactionStatement(){
-        val intent = Intent(this, TransactionStatementActivity::class.java)
+    override fun showStatement(id: Int){
+        val intent = Intent(this, StatementActivity::class.java)
+        intent.putExtra(BUDGET_ID_KEY, id)
         startActivity(intent)
     }
 
-
-    override fun ShowAddExpense(budget: Budget) {
+    override fun addExpense(budget: Budget) {
         val intent = Intent(this, AddExpenseActivity::class.java)
         intent.putExtra(BUDGET_FOR_EXPENSE_KEY, budget)
         startActivity(intent)
+    }
+
+    override fun deleteBudget(budget: Budget) {
+        budgetViewModel.deleteBudget(budget)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -62,4 +69,5 @@ class BudgetActivity : AppCompatActivity(), TransactionCallback {
             }
         }
     }
+
 }

@@ -1,11 +1,12 @@
 package com.marceme.cashtracker
 
+import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity;
+import com.marceme.cashtracker.expense.ExpenseViewModel
 import com.marceme.cashtracker.model.Budget
 import kotlinx.android.synthetic.main.activity_add_expense.*
-import kotlinx.android.synthetic.main.add_budget_content.*
 import kotlinx.android.synthetic.main.add_expense_content.*
 
 const val BUDGET_FOR_EXPENSE_KEY = "com.marceme.cashtracker.budget_for_expense"
@@ -24,6 +25,12 @@ class AddExpenseActivity : AppCompatActivity(){
         button_save_expense.setOnClickListener {
             saveExpensive()
         }
+
+        expenseViewModel.isSavedState.observe(this, Observer {
+            if(it == true){
+                finish()
+            }
+        })
     }
 
     private fun saveExpensive() {

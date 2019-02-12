@@ -1,13 +1,16 @@
-package com.marceme.cashtracker
+package com.marceme.cashtracker.expense
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.marceme.cashtracker.R
 import com.marceme.cashtracker.model.Expense
+import com.marceme.cashtracker.statement.StatementCallback
+import com.marceme.cashtracker.textAsUSCurrency
 import kotlinx.android.synthetic.main.expense_layout.view.*
 
-class ExpenseAdapter : RecyclerView.Adapter<ExpenseAdapter.ExpenseViewHolder>() {
+class ExpenseAdapter(val statementCallback: StatementCallback) : RecyclerView.Adapter<ExpenseAdapter.ExpenseViewHolder>() {
 
     private var expenses = mutableListOf<Expense>()
 
@@ -27,6 +30,7 @@ class ExpenseAdapter : RecyclerView.Adapter<ExpenseAdapter.ExpenseViewHolder>() 
     }
 
     fun addExpenses(expenses: List<Expense>) {
+        this.expenses.clear()
         this.expenses.addAll(expenses)
         notifyDataSetChanged()
     }
@@ -35,7 +39,8 @@ class ExpenseAdapter : RecyclerView.Adapter<ExpenseAdapter.ExpenseViewHolder>() 
 
         fun bind(expense: Expense) {
             item.expense_name.text = expense.description
-            item.expense_total.text = expense.spent.toString()
+            item.expense_total.textAsUSCurrency(expense.spent)
+            item.setOnClickListener { statementCallback.delete(expense) }
         }
 
     }

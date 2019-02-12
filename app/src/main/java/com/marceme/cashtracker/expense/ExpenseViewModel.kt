@@ -1,16 +1,15 @@
-package com.marceme.cashtracker
+package com.marceme.cashtracker.expense
 
 import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
+import android.arch.lifecycle.MutableLiveData
 import com.marceme.cashtracker.database.BudgetRepository
 import com.marceme.cashtracker.database.ExpenseRepository
 import com.marceme.cashtracker.database.ExpenseRoomDatabase
+import com.marceme.cashtracker.dateAsString
 import com.marceme.cashtracker.model.Budget
 import com.marceme.cashtracker.model.Expense
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import java.lang.Exception
 import java.util.*
 import kotlin.coroutines.CoroutineContext
@@ -24,6 +23,9 @@ class ExpenseViewModel (application: Application) : AndroidViewModel(application
 
     private val expenseRepository: ExpenseRepository
     private val budgetRepository: BudgetRepository
+
+    val isSavedState = MutableLiveData<Boolean>()
+
 
     init {
         val expenseDao = ExpenseRoomDatabase.getDatabase(application).expenseDao()
@@ -39,18 +41,20 @@ class ExpenseViewModel (application: Application) : AndroidViewModel(application
     }
 
     fun saveExpense(description: String, spent:Long, budget: Budget) {
-
         val expense = Expense(description = description,
                             date = Date().dateAsString(),
                             spent = spent,
                             budgetId = budget.id)
 
-
-        scope.launch (Dispatchers.IO){
+        scope.launch (Dispatchers.Main){
             try {
-                expenseRepository.insert(expense)
+
+                withContext(Dispatchers.IO) { expenseRepository.insert(expense) }
+
                 val newBudget = budget.run { copy(totalSpent = totalSpent + spent) }
-                budgetRepository.update(newBudget)
+                withContext(Dispatchers.IO) { budgetRepository.update(newBudget) }
+
+                isSavedState.value = true
             } catch (e: Exception) {
                 e.printStackTrace()
             }

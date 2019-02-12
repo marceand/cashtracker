@@ -51,7 +51,7 @@
             android:textColor="#242424"/>
     <TextView
             android:id="@+id/text_total_expense"
-            android:text="10"
+            tools:text="10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"

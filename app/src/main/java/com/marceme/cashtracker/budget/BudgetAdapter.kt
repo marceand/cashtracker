@@ -1,4 +1,4 @@
-package com.marceme.cashtracker
+package com.marceme.cashtracker.budget
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -7,8 +7,12 @@ import android.view.ViewGroup
 import com.marceme.cashtracker.model.Budget
 import kotlinx.android.synthetic.main.balance_layout.view.*
 import kotlinx.android.synthetic.main.budget_row_layout.view.*
+import android.support.v7.widget.PopupMenu
+import com.marceme.cashtracker.R
+import com.marceme.cashtracker.textAsUSCurrency
 
-class BudgetAdapter(val budgetCallback: TransactionCallback) : RecyclerView.Adapter<BudgetAdapter.BudgetViewHolder>() {
+
+class BudgetAdapter(val budgetCallback: BudgetCallback) : RecyclerView.Adapter<BudgetAdapter.BudgetViewHolder>() {
 
     private var budgets = mutableListOf<Budget>()
 
@@ -39,13 +43,30 @@ class BudgetAdapter(val budgetCallback: TransactionCallback) : RecyclerView.Adap
             item.text_balance.textAsUSCurrency(budget.balance())
             item.text_total_budget.textAsUSCurrency(budget.amount)
             item.text_total_expense.textAsUSCurrency(budget.totalSpent)
+            item.image_more_option.setOnClickListener {
+                val popup = PopupMenu(item.context, item.image_more_option)
+                popup.inflate(R.menu.budget_row_menu)
+                popup.setOnMenuItemClickListener { menuItem ->
+                    when (menuItem.itemId) {
+                        R.id.edit ->{
+                            true
+                              }
+                        R.id.delete ->{
+                            budgetCallback.deleteBudget(budget)
+                            true
+                        }
+                        else -> false
+                    }
+                }
+                popup.show()
+            }
 
             item.text_add_expense.setOnClickListener {
-                budgetCallback.ShowAddExpense(budget)
+                budgetCallback.addExpense(budget)
             }
 
             item.setOnLongClickListener{
-                budgetCallback.showTransactionStatement()
+                budgetCallback.showStatement(budget.id)
                 true
             }
         }

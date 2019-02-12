@@ -8,7 +8,7 @@ import com.marceme.cashtracker.model.Budget
 interface BudgetDao {
 
     @Query("SELECT * from budget_table ORDER BY date ASC")
-    fun getAllExpenseTransaction(): LiveData<List<Budget>>
+    fun getAllBudgets(): LiveData<List<Budget>>
 
     @Insert()
     fun insert(transaction: Budget)
@@ -21,4 +21,7 @@ interface BudgetDao {
 
     @Query("DELETE FROM budget_table")
     fun deleteAll()
+
+    @Query("SELECT * FROM budget_table WHERE id = :id")
+    fun getBudget(id: Int): LiveData<Budget>
 }

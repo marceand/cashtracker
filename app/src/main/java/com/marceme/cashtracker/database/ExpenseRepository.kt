@@ -22,4 +22,8 @@ class ExpenseRepository(private val expenseDao: ExpenseDao) {
     suspend fun delete(expense: Expense) {
         expenseDao.delete(expense);
     }
+
+    fun getExpensesForBudget(id: Int): LiveData<List<Expense>> {
+        return expenseDao.getExpenseForBudget(id)
+    }
 }

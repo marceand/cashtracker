@@ -1,4 +1,4 @@
-package com.marceme.cashtracker
+package com.marceme.cashtracker.budget
 
 import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
@@ -38,6 +38,16 @@ class BudgetViewModel(application: Application) : AndroidViewModel(application) 
         scope.launch (Dispatchers.IO){
             try {
             repository.insert(budget)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+    }
+
+    fun deleteBudget(budget: Budget) {
+        scope.launch (Dispatchers.IO){
+            try {
+                repository.delete(budget)
             } catch (e: Exception) {
                 e.printStackTrace()
             }
