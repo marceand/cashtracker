@@ -8,10 +8,10 @@ An app for monitoring budget and expense.
 3. Coroutine - used to perform asynchronous database operations 
 
 # Screenshot
-<img src="" width="320" height="550">
+<img src="https://github.com/marceand/cashtracker/blob/develop/screenshot/main.png" width="320" height="550">
 
-<img src="" width="320" height="550">
+<img src="https://github.com/marceand/cashtracker/blob/develop/screenshot/statement.png" width="320" height="550">
 
-<img src="" width="320" height="550">
+<img src="https://github.com/marceand/cashtracker/blob/develop/screenshot/add-expense.png" width="320" height="550">
 
 
