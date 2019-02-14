@@ -75,8 +75,3 @@ class StatementViewModel (application: Application) : AndroidViewModel(applicati
         newBudget?.let { withContext(Dispatchers.IO) { budgetRepository.update(it) } }
     }
 }
-
-
-// nicolas gift 50
-// hair cut 17
-// chocolate hersey 1
